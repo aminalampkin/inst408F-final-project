@@ -1,4 +1,5 @@
 # INST408F Final Project Code
+# Amina Lampkin
 
 # Set the working directory
 setwd('/Users/aminasymone/Documents/INST408F/Final Project')
@@ -57,17 +58,17 @@ brfss <- filter(brfss, CNCRAGE >= 1 & CNCRAGE <=97)
 # Race
 ggplot(data=brfss) +
   geom_boxplot(mapping = aes(x=X_RACE, y=CNCRAGE, fill = X_RACE)) +
-  labs(title = "Comparing the Age of Cancer Diagnosis by Race", x = "Race", y= "Age of Diagnosis (Years)")
+  labs(title = "Age of Cancer Diagnosis by Race", x = "Race", y= "Age of Diagnosis (Years)")
 
 # Educational Attainment 
 ggplot(data=brfss) +
   geom_boxplot(mapping = aes(x=X_EDUCAG, y=CNCRAGE, fill=X_EDUCAG)) +
-  labs(title = "Comparing the Age of Cancer Diagnosis by Educational Attainment", x = "Educational Attainment", y = "Age of Diagnosis (Years)")
+  labs(title = "Age of Cancer Diagnosis by Educational Attainment", x = "Educational Attainment", y = "Age of Diagnosis (Years)")
 
 # Number of Days Mental Health was Poor
 ggplot(data=brfss) +
   geom_point(mapping = aes(x=MENTHLTH, y=CNCRAGE)) +
-  labs(title = "Comparing the Age of Cancer Diagnosis by the Number of Days a Respondent's Mental Health was Poor")
+  labs(title = "Age of Cancer Diagnosis by Poor Mental Health Days", x="Poor Mental Health (Days)", y = "Age of Diagnosis (Years)")
 
 ## Multiple Linear Regression
 mlr <- lm(MENTHLTH~X_RACE + X_EDUCAG + CNCRAGE, data =brfss)
