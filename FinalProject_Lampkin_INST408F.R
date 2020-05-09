@@ -71,6 +71,6 @@ ggplot(data=brfss) +
   labs(title = "Age of Cancer Diagnosis by Poor Mental Health Days", x="Poor Mental Health (Days)", y = "Age of Diagnosis (Years)")
 
 ## Multiple Linear Regression
-mlr <- lm(MENTHLTH~X_RACE + X_EDUCAG + CNCRAGE, data =brfss)
+mlr <- lm(CNCRAGE~X_RACE + X_EDUCAG + MENTHLTH, data =brfss)
 summary(mlr)
 
