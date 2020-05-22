@@ -1,5 +1,4 @@
 # INST408F Final Project Code
-# Amina Lampkin
 
 # Set the working directory
 setwd('/Users/aminasymone/Documents/INST408F/Final Project')
@@ -74,3 +73,5 @@ ggplot(data=brfss) +
 mlr <- lm(CNCRAGE~X_RACE + X_EDUCAG + MENTHLTH, data =brfss)
 summary(mlr)
 
+# Check the assumptions
+plot(mlr)
